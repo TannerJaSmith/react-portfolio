@@ -1,11 +1,10 @@
 import React from 'react';
 import PortfolioContainer from "../portfolio/portfolio-container";
 
-export default function () {
+export default function (props) {
     return(
         <div>
-            <h2>Homepage</h2>
-            <PortfolioContainer />
+            <h2>Portfolio Detail for {props.match.params.slug}</h2>
         </div>
     );
 }
