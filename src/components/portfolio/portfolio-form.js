@@ -19,6 +19,18 @@ export default class portfolioForm extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    buildForm(){
+        let formData = new FormData();
+
+        formData.append("portfolio_item[name]", this.state.name);
+        formData.append("portfolio_item[description]", this.state.description);
+        formData.append("portfolio_item[url]", this.state.url);
+        formData.append("portfolio_item[category]", this.state.category);
+        formData.append("portfolio_item[position]", this.state.position);
+    
+        return formData;
+    }
+
     handleChange(event){
         this.setState({
             [event.target.name]: event.target.value
@@ -26,6 +38,7 @@ export default class portfolioForm extends Component {
     }
 
     handleSubmit(event){
+        this.buildForm();
         event.preventDefault();
     }
 
@@ -33,7 +46,7 @@ export default class portfolioForm extends Component {
         return (
             <div>
                 <div>portfolioForm</div>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <div>
                         <input type="text" name="name" placeholder="Name" value={this.state.name} onChange={this.handleChange} />
                         <input type="text" name="url" placeholder="Link" value={this.state.url} onChange={this.handleChange} />
