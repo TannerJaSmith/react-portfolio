@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import{
+import
+{
   BrowserRouter as Router,
   Switch,
   Route
-}from 'react-router-dom';
+} from 'react-router-dom';
 
 import NavigationContainer from './navigation/navigation-container.js';
 import Home from "./pages/home";
@@ -14,8 +15,10 @@ import PortfolioDetail from "./portfolio/portfolio-detail";
 import Auth from "./pages/auth";
 import NoMatch from "./pages/no-match";
 
-export default class App extends Component {
-  render() {
+export default class App extends Component
+{
+  render()
+  {
     return (
       <div className='container'>
         <Router>
@@ -28,7 +31,7 @@ export default class App extends Component {
               <Route path="/contact" component={Contact} />
               <Route path="/blog" component={Blog} />
               <Route exact path="/portfolio/:slug" component={PortfolioDetail} />
-              <Route component={NoMatch}/>
+              <Route component={NoMatch} />
             </Switch>
           </div>
         </Router>
