@@ -46,17 +46,11 @@
 	],
 	"description": "Axios Request Full"
 	},
-	"Axios Request Part": {
+	"Axios Request Import": {
 		"prefix": "ax",
 		"body": [
-		  "axios.get('$1')",
-		  "  .then(response => {",
-		  "    $2",
-		  "  })",
-		  "  .catch(error => {",
-		  "    $3",
-		  "  });"
+		  "import axios from 'axios';"
 		],
-		"description": "Axios Request Part"
+		"description": "Axios Request Import"
 	}
 }
