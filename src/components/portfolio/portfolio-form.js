@@ -153,7 +153,7 @@ export default class portfolioForm extends Component {
         axios({method: this.state.apiAction, url: this.state.apiUrl, data: this.buildForm(), withCredentials: true})   //..post("https://tannersmith.devcamp.space/portfolio/portfolio_items", this.buildForm(), {withCredentials: true})
         .then(response => {
             if(this.state.editMode){
-                this.props.handleEditFormSubmission();
+                this.props.handleUpdateFormSubmission();
             }
             else{
                 this.props.handleNewFormSubmission(response.data.portfolio_item);
