@@ -35,8 +35,9 @@ class Blog extends Component
         .then(response =>
         {
             this.setState({
-                blogItem: this.setState.blogItem(blogItem =>{
-                    return blog.id != blogItem.id;
+                blogItems: this.state.blogItems.filter(blogItem =>
+                {
+                    return blog.id !== blogItem.id;
                 })
             });
             return response.data;
