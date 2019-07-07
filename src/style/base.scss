@@ -7,3 +7,7 @@ body {
     display: grid;
     grid-template-columns: 1fr;
 }
+
+html{
+    max-width: 100vw;
+}
